@@ -46,6 +46,7 @@ main {
   margin: 0 auto;
   padding: 1.5rem;
 }
+
 /* Updated Header Styles */
 header {
   background-color: var(--card-bg);
@@ -141,9 +142,6 @@ header nav a.active::after {
     width: 100%;
     justify-content: center;
   }
-}
-
-
 }
 
 footer {
