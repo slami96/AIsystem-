@@ -5,7 +5,7 @@ function Header() {
   
   return (
     <header>
-      <div className="container header-container">
+      <div className="header-container">
         <div className="logo-section">
           <span className="logo-icon">🎬</span>
           <h1>MovieMind</h1>
