@@ -1,4 +1,4 @@
-import { Link, useLocation } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom';
 
 function Header() {
   const location = useLocation();
@@ -20,7 +20,7 @@ function Header() {
         </nav>
       </div>
     </header>
-  )
+  );
 }
 
-export default Header
+export default Header;
