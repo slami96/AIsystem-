@@ -3,7 +3,7 @@ function Footer() {
     <footer>
       <div className="container">
         <p>Movie Recommendation Expert System &copy; {new Date().getFullYear()}</p>
-        <p>Created for Educational Purposes</p>
+        <p>Created by the group The Tigers</p>
       </div>
     </footer>
   )
