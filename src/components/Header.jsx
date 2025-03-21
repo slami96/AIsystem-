@@ -1,13 +1,22 @@
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 
 function Header() {
+  const location = useLocation();
+  
   return (
     <header>
-      <div className="container">
-        <h1>Movie Recommendation Expert System</h1>
+      <div className="container header-container">
+        <div className="logo-section">
+          <span className="logo-icon">🎬</span>
+          <h1>MovieMind</h1>
+        </div>
         <nav>
-          <Link to="/">Home</Link>
-          <Link to="/expert-system">Get Recommendations</Link>
+          <Link to="/" className={location.pathname === '/' ? 'active' : ''}>
+            Home
+          </Link>
+          <Link to="/expert-system" className={location.pathname === '/expert-system' ? 'active' : ''}>
+            Get Recommendations
+          </Link>
         </nav>
       </div>
     </header>
