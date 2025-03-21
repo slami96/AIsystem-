@@ -2,12 +2,14 @@ import { useState } from 'react'
 import { genres, attributes, moods, rules, movieGoals } from '../utils/knowledgeBase'
 import { forwardChaining } from '../utils/forwardChaining'
 import { backwardChaining } from '../utils/backwardChaining'
+import DecisionTreeVisualization from './DecisionTreeVisualization'
 
 function ExpertSystem() {
   const [selectedPreferences, setSelectedPreferences] = useState([])
   const [inferenceMethod, setInferenceMethod] = useState('forward')
   const [results, setResults] = useState(null)
   const [selectedMovie, setSelectedMovie] = useState('')
+  const [showVisualization, setShowVisualization] = useState(false)
   
   // Handle checkbox changes
   const handleCheckboxChange = (id) => {
@@ -42,6 +44,9 @@ function ExpertSystem() {
         data: result
       })
     }
+    
+    // Show visualization after getting results
+    setShowVisualization(true)
   }
   
   // Get movie name from rule conclusion
@@ -50,9 +55,31 @@ function ExpertSystem() {
     return rule ? rule.message.split(' - ')[0] : conclusion
   }
   
+  // Toggle visualization
+  const toggleVisualization = () => {
+    setShowVisualization(!showVisualization)
+  }
+  
   return (
     <div className="expert-system">
       <h2>Movie Recommendation System</h2>
+      
+      <div className="visualization-controls">
+        <button 
+          type="button" 
+          onClick={toggleVisualization}
+          className="visualization-toggle"
+        >
+          {showVisualization ? 'Hide Decision Tree' : 'Show Decision Tree'}
+        </button>
+      </div>
+      
+      {showVisualization && (
+        <DecisionTreeVisualization 
+          rules={rules} 
+          selectedPreferences={selectedPreferences} 
+        />
+      )}
       
       <form onSubmit={handleSubmit}>
         {/* Inference Method Selection */}
@@ -236,3 +263,5 @@ function ExpertSystem() {
 }
 
 export default ExpertSystem
+</document_content>
+</document>
