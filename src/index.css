@@ -100,3 +100,45 @@ button:hover {
   align-items: center;
   gap: 0.5rem;
 }
+
+.decision-tree {
+  margin: 2rem 0;
+  padding: 1rem;
+  background-color: #242424;
+  border-radius: 8px;
+  border: 1px solid #1a1a1a;
+}
+
+.tree-container {
+  overflow-x: auto;
+  margin-top: 1rem;
+  background-color: #1a1a1a;
+  border-radius: 4px;
+  padding: 1rem;
+}
+
+.visualization-controls {
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.visualization-toggle {
+  background-color: #2a2a2a;
+  color: white;
+  border: 1px solid #646cff;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.visualization-toggle:hover {
+  background-color: #3a3a3a;
+}
+
+/* Make the tree responsive */
+svg {
+  max-width: 100%;
+  height: auto;
+}
